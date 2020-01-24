@@ -1,0 +1,25 @@
+<div #globalsidenav class="sidenav" (keydown.esc)="closeSideNav(true)" vertical [@sideBarToggled]="isOpen ? 'true' : 'false'" style="display: none">
+  <div class="interiorSideNav">
+
+    <div>
+      <div class="menu-container">
+        <ul class="menu-unstyled">
+          <li ngClass.gt-xs="gt-xs">
+            <a #manageAccount class="menu-link menu-link-primary" #firstButton
+            (blur)="resetOpenStateKeyEvent()">
+              I'm a link
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="close-button">
+      <button #closeButton class="icon-button" aria-label="Close button for navigation menu" (keydown.space)="closeButtonCloseSideNav(true)" (keydown.enter)="closeButtonCloseSideNav(true)" (mouseup)="closeButtonCloseSideNav()">
+        <span ngk-icon ngkIcon="x" class="close-icon"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<button (click)="openSideNav()">Trigger</button>
